@@ -45,7 +45,7 @@ function initCursor() {
   animateCursor();
 
   // Hover states for interactive items
-  const hoverElements = document.querySelectorAll('a, button, .service-card, .work-item, .form-input, .ticker-item, .process-step, .filter-btn');
+  const hoverElements = document.querySelectorAll('a, button, .service-card, .work-item, .form-input, .ticker-item, .process-step, .filter-btn, .menu-toggle');
   hoverElements.forEach(elem => {
     elem.addEventListener('mouseenter', () => {
       cursor.classList.add('cursor-hover');
@@ -53,6 +53,17 @@ function initCursor() {
     elem.addEventListener('mouseleave', () => {
       cursor.classList.remove('cursor-hover');
     });
+  });
+
+  // Click / Active feedback micro-animations
+  document.addEventListener('mousedown', () => {
+    cursor.classList.add('cursor-clicking');
+    cursorDot.classList.add('cursor-clicking');
+  });
+
+  document.addEventListener('mouseup', () => {
+    cursor.classList.remove('cursor-clicking');
+    cursorDot.classList.remove('cursor-clicking');
   });
 }
 
@@ -62,11 +73,24 @@ function initCursor() {
 function initNavigation() {
   const navLinks = document.querySelectorAll('.nav-link, #headerLogo, #hero-cta-contact, #hero-cta-work');
   const sections = document.querySelectorAll('section');
+  const menuToggle = document.getElementById('menuToggle');
+  const mainHeader = document.getElementById('mainHeader');
+
+  if (menuToggle && mainHeader) {
+    menuToggle.addEventListener('click', () => {
+      mainHeader.classList.toggle('nav-open');
+    });
+  }
 
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       
+      // Close mobile navigation menu on click
+      if (mainHeader) {
+        mainHeader.classList.remove('nav-open');
+      }
+
       // Target section ID retrieval
       let targetId = link.getAttribute('href');
       if (!targetId || targetId === '#') return;
@@ -208,7 +232,9 @@ function initHeroSculptureInteraction() {
   const sculpture = document.getElementById('digitalSculpture');
   if (!sculpture) return;
 
+  // Mouse tilt for desktop
   sculpture.addEventListener('mousemove', (e) => {
+    if (window.innerWidth <= 768) return; // Disable tilt on mobile/touch screens
     const rect = sculpture.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
@@ -221,6 +247,25 @@ function initHeroSculptureInteraction() {
   });
 
   sculpture.addEventListener('mouseleave', () => {
+    sculpture.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+  });
+
+  // Touch tilt for mobile devices
+  sculpture.addEventListener('touchmove', (e) => {
+    if (e.touches.length !== 1) return;
+    const touch = e.touches[0];
+    const rect = sculpture.getBoundingClientRect();
+    const x = touch.clientX - rect.left - rect.width / 2;
+    const y = touch.clientY - rect.top - rect.height / 2;
+    
+    // Slightly more sensitive tilt on touch drags
+    const rotateX = -y / 6;
+    const rotateY = x / 6;
+    
+    sculpture.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  }, { passive: true });
+
+  sculpture.addEventListener('touchend', () => {
     sculpture.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
   });
 }
