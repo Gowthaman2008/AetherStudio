@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aether Studio is a premium digital design and technology agency crafting high-end digital experiences, modern brands, and state-of-the-art interactive platforms.">
+  <title>Aether Studio — Digital Design & Tech Agency</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Premium Interactive Custom Cursor -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="custom-cursor-dot" id="customCursorDot"></div>
+
+  <!-- Ambient Glowing Background Blobs & Grid -->
+  <div class="glow-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header id="mainHeader">
+    <div class="container nav-container">
+      <a href="#home" class="logo" id="headerLogo">
+        AETHER<div class="logo-dot"></div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#home" class="nav-link active" id="nav-home">Home</a></li>
+          <li><a href="#services" class="nav-link" id="nav-services">Services</a></li>
+          <li><a href="#work" class="nav-link" id="nav-work">Work</a></li>
+          <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
+          <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Website Content -->
+  <main>
+    
+    <!-- Home / Hero Section -->
+    <section id="home" class="active visible">
+      <div class="container hero-content">
+        <div class="hero-grid">
+          
+          <!-- Left: Hero Text Content -->
+          <div class="hero-text-block">
+            <div class="pill-badge">
+              <span class="badge-dot"></span>Now accepting projects for Q3 2026
+            </div>
+            <h1 class="hero-title">
+              <span>We craft digital</span>
+              <span>interfaces that</span>
+              <span class="highlight">shape tomorrow.</span>
+            </h1>
+            <p class="hero-desc">
+              Aether Studio is a collective of designers and developers building elite, high-performance web systems and mobile products. We combine luxury aesthetic design with zero-latency software execution.
+            </p>
+            <div class="hero-cta" style="margin-bottom: 4.5rem;">
+              <a href="#contact" class="btn btn-primary" id="hero-cta-contact">Initiate Project</a>
+              <a href="#work" class="btn btn-secondary" id="hero-cta-work">Explore Gallery</a>
+            </div>
+          </div>
+          
+          <!-- Right: Interactive 3D Digital Sculpture -->
+          <div class="hero-visual-block">
+            <div class="digital-sculpture" id="digitalSculpture">
+              <div class="core-orb"></div>
+              <div class="sculpture-ring ring-1"></div>
+              <div class="sculpture-ring ring-2"></div>
+              <div class="sculpture-ring ring-3"></div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- More details grid on home page -->
+        <div class="hero-details-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; width: 100%; border-top: 1px solid var(--border-color); padding-top: 3.5rem;">
+          <div class="hero-detail-col" id="pillar-vision">
+            <span style="font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--accent-cyan); letter-spacing: 0.1em; text-transform: uppercase;">01 / Visionary Design</span>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin: 0.75rem 0 0.5rem 0;">Immersive Experiences</h3>
+            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);">We shape pixel-perfect interfaces that prioritize fluid motion, layout symmetry, and unique visual identity.</p>
+          </div>
+          <div class="hero-detail-col" id="pillar-development">
+            <span style="font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--accent-purple); letter-spacing: 0.1em; text-transform: uppercase;">02 / High Performance</span>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin: 0.75rem 0 0.5rem 0;">Clean Engineering</h3>
+            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);">Optimized for 60fps animations, structured semantic elements, fast loading times, and zero framework bloat.</p>
+          </div>
+          <div class="hero-detail-col" id="pillar-scale">
+            <span style="font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--accent-blue); letter-spacing: 0.1em; text-transform: uppercase;">03 / Strategic Growth</span>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin: 0.75rem 0 0.5rem 0;">Global Scalability</h3>
+            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);">Designing for search engines, high core web vitals, and scalable architectures that grow with your user base.</p>
+          </div>
+        </div>
+        
+        <!-- Client Logo Ticker -->
+        <div class="client-ticker-container">
+          <div class="ticker-title">Trusted By Leading Tech Pioneers</div>
+          <div class="ticker-wrap">
+            <div class="ticker-scroll">
+              <span class="ticker-item">SYNAPSE</span>
+              <span class="ticker-item">VORTEX</span>
+              <span class="ticker-item">HELIOS</span>
+              <span class="ticker-item">ONYX</span>
+              <span class="ticker-item">PULSE</span>
+              <span class="ticker-item">NEXUS</span>
+              <!-- Repeat item set for seamless wrap-scroll -->
+              <span class="ticker-item">SYNAPSE</span>
+              <span class="ticker-item">VORTEX</span>
+              <span class="ticker-item">HELIOS</span>
+              <span class="ticker-item">ONYX</span>
+              <span class="ticker-item">PULSE</span>
+              <span class="ticker-item">NEXUS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Production Pipeline Process Timeline -->
+        <div class="home-process-container">
+          <div class="process-header">
+            <span class="process-tag">Production Pipeline</span>
+            <h2 class="process-title">How We Build</h2>
+          </div>
+          <div class="process-steps">
+            <!-- Step 1 -->
+            <div class="process-step" id="step-discover">
+              <div class="step-num">01</div>
+              <h4 class="step-title">Discover & Define</h4>
+              <p class="step-desc">Deconstruct your operational workflows, audit performance targets, and map technical logic requirements.</p>
+            </div>
+            <!-- Step 2 -->
+            <div class="process-step" id="step-design">
+              <div class="step-num">02</div>
+              <h4 class="step-title">Interactive Design</h4>
+              <p class="step-desc">Model customized visual design systems, interactive web layout mockups, and typography templates.</p>
+            </div>
+            <!-- Step 3 -->
+            <div class="process-step" id="step-build">
+              <div class="step-num">03</div>
+              <h4 class="step-title">Premium Build</h4>
+              <p class="step-desc">Code using clean semantic elements, hardware-accelerated 3D loops, and zero heavy frameworks.</p>
+            </div>
+            <!-- Step 4 -->
+            <div class="process-step" id="step-optimize">
+              <div class="step-num">04</div>
+              <h4 class="step-title">Optimize & Scale</h4>
+              <p class="step-desc">Run strict device responsiveness tests, cache media assets, and deploy to secure global edge networks.</p>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Capabilities</span>
+          <h2 class="section-title">Core Services</h2>
+          <p>Deploying specialized design thinking, cutting-edge development pipelines, and meticulous engineering to scale your vision.</p>
+        </div>
+        
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card" id="service-creative-design">
+            <div class="service-icon">✦</div>
+            <h3>Digital Art Direction</h3>
+            <p>High-end UI/UX architecture, responsive web structures, product layouts, and visual design assets tailored for premium brand engagement.</p>
+            <ul style="list-style: none; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
+              <li>• UI/UX Strategy Scopes</li>
+              <li>• Interactive Layout Palettes</li>
+              <li>• Multi-device Symmetries</li>
+              <li>• Design System Scoping</li>
+            </ul>
+          </div>
+          <!-- Service 2 -->
+          <div class="service-card" id="service-branding">
+            <div class="service-icon">✺</div>
+            <h3>Brand Systems</h3>
+            <p>Comprehensive identity design, custom typography, animations, guidelines, and visual storytelling tools that command premium authority.</p>
+            <ul style="list-style: none; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
+              <li>• Visual Brand Guidelines</li>
+              <li>• Identity Guidelines</li>
+              <li>• Custom Asset Vector Packs</li>
+              <li>• Typography Palettes</li>
+            </ul>
+          </div>
+          <!-- Service 3 -->
+          <div class="service-card" id="service-development">
+            <div class="service-icon">⚙</div>
+            <h3>Interactive Engineering</h3>
+            <p>Developing lightweight, lightning-fast web applications, custom animations, web layouts, and interactive modules using robust, clean codebases.</p>
+            <ul style="list-style: none; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
+              <li>• React & Vite Architectures</li>
+              <li>• 60fps Animation Physics</li>
+              <li>• API Scopes & Caching</li>
+              <li>• OWASP Vulnerability Sweeps</li>
+            </ul>
+          </div>
+          <!-- Service 4 -->
+          <div class="service-card" id="service-app-development">
+            <div class="service-icon">❖</div>
+            <h3>App Development</h3>
+            <p>Crafting performant native iOS & Android applications and fluid cross-platform solutions (React Native, Flutter) featuring hardware-accelerated animations.</p>
+            <ul style="list-style: none; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
+              <li>• Native Swift / iOS</li>
+              <li>• Native Kotlin / Android</li>
+              <li>• Cross-platform SDKs</li>
+              <li>• Secure Endpoint Protocols</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Vetted Stack Operations -->
+        <div class="tech-stack-container" style="margin-top: 5.5rem; border-top: 1px solid var(--border-color); padding-top: 3.5rem;">
+          <h3 style="font-size: 0.85rem; font-family: var(--font-display); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 2.5rem; text-align: center; font-weight: 700;">Vetted Stack Operations</h3>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3.5rem; color: var(--text-secondary); font-family: var(--font-display); font-weight: 700; font-size: 1rem; opacity: 0.7;">
+            <span>JAVASCRIPT</span>
+            <span>WEBGL / THREE.JS</span>
+            <span>REACT / NEXT.JS</span>
+            <span>SWIFT / IOS</span>
+            <span>KOTLIN / ANDROID</span>
+            <span>TAILWIND CSS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Curated Works</span>
+          <h2 class="section-title">Selected Projects</h2>
+          <p>A handpicked gallery of products, installations, and brand projects built for forward-thinking clients.</p>
+        </div>
+        
+        <!-- Interactive Project Filter Controls -->
+        <div class="work-filters" style="display: flex; gap: 1.5rem; margin-bottom: 3.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.2rem; flex-wrap: wrap;">
+          <button class="filter-btn active" data-filter="all" style="background: transparent; border: none; font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); cursor: pointer; padding-bottom: 4px; border-bottom: 2px solid var(--accent-cyan); transition: var(--transition-fast);">All Projects</button>
+          <button class="filter-btn" data-filter="design" style="background: transparent; border: none; font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-secondary); cursor: pointer; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: var(--transition-fast);">Design</button>
+          <button class="filter-btn" data-filter="dev" style="background: transparent; border: none; font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-secondary); cursor: pointer; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: var(--transition-fast);">Development</button>
+          <button class="filter-btn" data-filter="branding" style="background: transparent; border: none; font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-secondary); cursor: pointer; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: var(--transition-fast);">Branding</button>
+        </div>
+
+        <div class="work-grid">
+          <!-- Work Item 1 -->
+          <div class="work-item" id="work-item-1" data-category="design" style="transition: var(--transition-smooth);">
+            <div class="work-img-placeholder">
+              <span style="font-size: 1.5rem; font-weight: 700; color: rgba(255,255,255,0.15);">[ 01 — AI Workspace Platform ]</span>
+              <div class="work-img-overlay"></div>
+            </div>
+            <div class="work-info">
+              <span class="work-category">Design & Interface</span>
+              <h3 class="work-title">Aura Intelligent Flow</h3>
+              <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span style="width: 6px; height: 6px; background-color: var(--accent-cyan); border-radius: 50%;"></span>
+                Result: +34% Scoping Efficiency
+              </div>
+              <a href="#" class="work-link" id="work-link-1">View Case Study ↗</a>
+            </div>
+          </div>
+          <!-- Work Item 2 -->
+          <div class="work-item" id="work-item-2" data-category="dev" style="transition: var(--transition-smooth);">
+            <div class="work-img-placeholder">
+              <span style="font-size: 1.5rem; font-weight: 700; color: rgba(255,255,255,0.15);">[ 02 — Web Experience ]</span>
+              <div class="work-img-overlay"></div>
+            </div>
+            <div class="work-info">
+              <span class="work-category">Interactive Dev</span>
+              <h3 class="work-title">Synapse Analytics</h3>
+              <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span style="width: 6px; height: 6px; background-color: var(--accent-purple); border-radius: 50%;"></span>
+                Result: 0.8s Initial Load Speed
+              </div>
+              <a href="#" class="work-link" id="work-link-2">View Case Study ↗</a>
+            </div>
+          </div>
+          <!-- Work Item 3 -->
+          <div class="work-item" id="work-item-3" data-category="branding" style="transition: var(--transition-smooth);">
+            <div class="work-img-placeholder">
+              <span style="font-size: 1.5rem; font-weight: 700; color: rgba(255,255,255,0.15);">[ 03 — Brand Identity ]</span>
+              <div class="work-img-overlay"></div>
+            </div>
+            <div class="work-info">
+              <span class="work-category">Visual Branding</span>
+              <h3 class="work-title">Helios Soundworks</h3>
+              <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span style="width: 6px; height: 6px; background-color: var(--accent-blue); border-radius: 50%;"></span>
+                Result: Unified Design Guidelines
+              </div>
+              <a href="#" class="work-link" id="work-link-3">View Case Study ↗</a>
+            </div>
+          </div>
+          <!-- Work Item 4 -->
+          <div class="work-item" id="work-item-4" data-category="dev" style="transition: var(--transition-smooth);">
+            <div class="work-img-placeholder">
+              <span style="font-size: 1.5rem; font-weight: 700; color: rgba(255,255,255,0.15);">[ 04 — Mobile Interface ]</span>
+              <div class="work-img-overlay"></div>
+            </div>
+            <div class="work-info">
+              <span class="work-category">Mobile Engineering</span>
+              <h3 class="work-title">Vortex Crypto Ledger</h3>
+              <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span style="width: 6px; height: 6px; background-color: var(--accent-cyan); border-radius: 50%;"></span>
+                Result: End-to-End Asset Encryption
+              </div>
+              <a href="#" class="work-link" id="work-link-4">View Case Study ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About Studio</span>
+          <h2 class="section-title">The Collective</h2>
+        </div>
+        
+        <div class="about-split">
+          <div class="about-text">
+            <h3>We believe design is structural integrity, and code is art.</h3>
+            <p>Founded at the intersection of visual precision and high-performance programming, Aether Studio creates bespoke solutions that stand out on any medium.</p>
+            <p>Our philosophy is centered on fluid interactions, optimized frame rates, and visual excellence that establishes trust immediately.</p>
+          </div>
+          
+          <div class="stats-grid">
+            <div class="stat-item" id="stat-projects">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Projects Deployed</div>
+            </div>
+            <div class="stat-item" id="stat-awards">
+              <div class="stat-number">12</div>
+              <div class="stat-label">Industry Accolades</div>
+            </div>
+            <div class="stat-item" id="stat-experience">
+              <div class="stat-number">8</div>
+              <div class="stat-label">Years of Innovation</div>
+            </div>
+            <div class="stat-item" id="stat-satisfaction">
+              <div class="stat-number">99%</div>
+              <div class="stat-label">Client Retention</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Scoping Standards (Client Trust Assurances) -->
+        <div class="scoping-standards-grid" style="margin-top: 5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; border-top: 1px solid var(--border-color); padding-top: 4.5rem; width: 100%;">
+          <div class="standard-item" style="border-left: 2px solid var(--accent-cyan); padding-left: 1.5rem; transition: var(--transition-smooth);" id="guarantee-nda">
+            <h4 style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff;">Scoping NDA Standard</h4>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary);">Your IP is completely secure. Scoping standard NDAs are signed before scoping or reviewing project operations.</p>
+          </div>
+          <div class="standard-item" style="border-left: 2px solid var(--accent-purple); padding-left: 1.5rem; transition: var(--transition-smooth);" id="guarantee-security">
+            <h4 style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff;">Sandboxed Scans Policy</h4>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary);">Strict visual sandbox environments, encrypted credentials storage, and OWASP-vetted logic pipelines.</p>
+          </div>
+          <div class="standard-item" style="border-left: 2px solid var(--accent-blue); padding-left: 1.5rem; transition: var(--transition-smooth);" id="guarantee-support">
+            <h4 style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff;">30-Day Engineering Support</h4>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary);">All custom developments include 30 days of post-deployment logic revisions to ensure zero downtime.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section - BOXES REMOVED, BEAUTIFUL ORDERED ALIGNMENT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Let's Create</h2>
+          <p>Collaborate with us to develop products that redefine your industry. Drop us a line below.</p>
+        </div>
+        
+        <div class="contact-layout">
+          <!-- Left side details (Ordered vertical alignment with visual track line cues) -->
+          <div class="contact-details">
+            <div class="contact-intro">
+              Have a concept, dynamic platform, or visual system you want to bring to life? Reach out. Our team typically replies within 24 hours.
+            </div>
+            
+            <div class="contact-info-list">
+              <!-- Detail Item 1 -->
+              <div class="contact-info-item" id="contact-info-email">
+                <span class="contact-info-label">Email</span>
+                <a href="mailto:hello@aether.studio" class="contact-info-value">hello@aether.studio</a>
+              </div>
+              <!-- Detail Item 2 -->
+              <div class="contact-info-item" id="contact-info-phone">
+                <span class="contact-info-label">Phone</span>
+                <span class="contact-info-value">+1 (555) 019-2834</span>
+              </div>
+              <!-- Detail Item 3 -->
+              <div class="contact-info-item" id="contact-info-office">
+                <span class="contact-info-label">Studio Office</span>
+                <span class="contact-info-value">120 Folsom Street, San Francisco, CA</span>
+              </div>
+            </div>
+            
+            <div class="social-flow">
+              <a href="#" class="social-link" id="social-linkedin">LinkedIn</a>
+              <a href="#" class="social-link" id="social-twitter">Twitter</a>
+              <a href="#" class="social-link" id="social-dribbble">Dribbble</a>
+            </div>
+          </div>
+          
+          <!-- Right side: Clean, borderless contact form with floating labels and glow lines -->
+          <div class="contact-form-container">
+            <form class="contact-form" id="contactForm" autocomplete="off" onsubmit="return false;">
+              
+              <!-- Full Name Field -->
+              <div class="form-group">
+                <input type="text" class="form-input" id="form-name" placeholder=" " required>
+                <label for="form-name" class="form-label">Your Name</label>
+                <div class="form-line-glow"></div>
+              </div>
+
+              <!-- Email Field -->
+              <div class="form-group">
+                <input type="email" class="form-input" id="form-email" placeholder=" " required>
+                <label for="form-email" class="form-label">Email Address</label>
+                <div class="form-line-glow"></div>
+              </div>
+
+              <!-- Project Type Field -->
+              <div class="form-group">
+                <input type="text" class="form-input" id="form-subject" placeholder=" ">
+                <label for="form-subject" class="form-label">Project Type (e.g. Web Design, Brand, Dev)</label>
+                <div class="form-line-glow"></div>
+              </div>
+
+              <!-- Message Field -->
+              <div class="form-group">
+                <textarea class="form-input" id="form-message" placeholder=" " required></textarea>
+                <label for="form-message" class="form-label">Tell us about your project</label>
+                <div class="form-line-glow"></div>
+              </div>
+
+
+
+              <!-- Submit button: Elegant borderless text trigger with SVG arrow hover animation -->
+              <div class="submit-btn-wrapper">
+                <button type="submit" class="btn-submit" id="contact-submit-btn">
+                  <span>Send Inquiry</span>
+                  <div class="btn-submit-arrow">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+
+              <!-- Status response messages -->
+              <div class="form-status" id="formStatus"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-logo">AETHER STUDIO.</div>
+      <div class="copyright">© 2026 Aether Studio. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+
+
+  <script src="app.js"></script>
+</body>
+</html>
