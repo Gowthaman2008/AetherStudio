@@ -245,7 +245,7 @@ nav ul {
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 9999;
-  transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+  transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s;
   mix-blend-mode: difference;
 }
 
@@ -258,6 +258,7 @@ nav ul {
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 9999;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s, box-shadow 0.15s;
 }
 
 .cursor-hover {
@@ -265,6 +266,28 @@ nav ul {
   height: 45px;
   background-color: rgba(0, 242, 254, 0.1);
   border-color: var(--accent-cyan);
+}
+
+/* Clicking feedback states */
+.custom-cursor.cursor-clicking {
+  transform: translate(-50%, -50%) scale(0.75);
+  border-color: var(--accent-cyan);
+  background-color: rgba(0, 242, 254, 0.15);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
+
+.custom-cursor-dot.cursor-clicking {
+  transform: translate(-50%, -50%) scale(2.2);
+  background-color: var(--accent-purple);
+  box-shadow: 0 0 10px var(--accent-purple);
+}
+
+/* Hide custom cursor on mobile / touch screen environments & small viewports */
+@media (pointer: coarse), (max-width: 768px) {
+  .custom-cursor,
+  .custom-cursor-dot {
+    display: none !important;
+  }
 }
 
 /* Sections - Premium Routing System */
@@ -434,8 +457,8 @@ section.visible {
 /* Digital 3D Sculpture */
 .digital-sculpture {
   position: relative;
-  width: 360px;
-  height: 360px;
+  width: var(--sculpture-size, 360px);
+  height: var(--sculpture-size, 360px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -445,8 +468,8 @@ section.visible {
 }
 
 .core-orb {
-  width: 120px;
-  height: 120px;
+  width: var(--orb-size, 120px);
+  height: var(--orb-size, 120px);
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
   box-shadow: 
@@ -468,24 +491,24 @@ section.visible {
 }
 
 .sculpture-ring.ring-1 {
-  width: 200px;
-  height: 200px;
+  width: var(--ring-1-size, 200px);
+  height: var(--ring-1-size, 200px);
   border-color: rgba(0, 242, 254, 0.3);
   border-top: 2px solid var(--accent-cyan);
   animation: spin-ring-1 15s linear infinite;
 }
 
 .sculpture-ring.ring-2 {
-  width: 270px;
-  height: 270px;
+  width: var(--ring-2-size, 270px);
+  height: var(--ring-2-size, 270px);
   border-color: rgba(155, 81, 224, 0.3);
   border-right: 2px solid var(--accent-purple);
   animation: spin-ring-2 20s linear infinite;
 }
 
 .sculpture-ring.ring-3 {
-  width: 340px;
-  height: 340px;
+  width: var(--ring-3-size, 340px);
+  height: var(--ring-3-size, 340px);
   border-color: rgba(0, 118, 255, 0.3);
   border-bottom: 2px solid var(--accent-blue);
   animation: spin-ring-3 25s linear infinite;
@@ -1102,59 +1125,7 @@ footer {
   color: var(--text-muted);
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .hero-title {
-    font-size: 3.5rem;
-  }
-  
-  .work-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .about-split {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  
-  .contact-layout {
-    grid-template-columns: 1fr;
-    gap: 4.5rem;
-  }
-}
 
-@media (max-width: 576px) {
-  html {
-    font-size: 14px;
-  }
-  
-  .container {
-    padding: 0 1.5rem;
-  }
-  
-  nav ul {
-    gap: 1.2rem;
-  }
-  
-  .hero-title {
-    font-size: 2.8rem;
-  }
-  
-  .hero-cta {
-    flex-direction: column;
-    width: 100%;
-    align-items: stretch;
-  }
-  
-  .btn {
-    width: 100%;
-  }
-  
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
 }
 
 /* ==========================================================================
@@ -1370,4 +1341,210 @@ footer {
   transform: scale(0.9) translateY(10px);
   pointer-events: none;
   display: none; /* simple display none toggle */
+}
+
+/* ==========================================================================
+   10. Hamburger Menu Button (Desktop Hidden)
+   ========================================================================== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+  padding: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-open .menu-toggle span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  background-color: var(--accent-cyan);
+}
+
+.nav-open .menu-toggle span:nth-child(2) {
+  transform: translateY(-8px) rotate(-45deg);
+  background-color: var(--accent-cyan);
+}
+
+/* ==========================================================================
+   11. Responsive Media Queries
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    text-align: center;
+  }
+  
+  .hero-text-block {
+    align-items: center;
+    order: 1;
+  }
+  
+  .hero-visual-block {
+    order: 2;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .about-split {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(5, 5, 8, 0.97);
+    backdrop-filter: blur(20px) saturate(180%);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .nav-open nav {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    width: 100%;
+  }
+  
+  .nav-link {
+    font-size: 1.8rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .process-title {
+    font-size: 2rem;
+  }
+  
+  /* Sizing variables overridden for tablet/mobile */
+  :root {
+    --sculpture-size: 300px;
+    --orb-size: 100px;
+    --ring-1-size: 170px;
+    --ring-2-size: 230px;
+    --ring-3-size: 290px;
+  }
+  
+  section {
+    padding: 5rem 0;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .service-card {
+    padding: 2.2rem 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  /* Sizing variables overridden for small mobile devices */
+  :root {
+    --sculpture-size: 260px;
+    --orb-size: 80px;
+    --ring-1-size: 140px;
+    --ring-2-size: 190px;
+    --ring-3-size: 250px;
+  }
+  
+  .work-info {
+    padding: 1.5rem;
+  }
+  
+  .work-title {
+    font-size: 1.35rem;
+  }
+  
+  .process-step {
+    padding: 2rem 1.5rem;
+  }
 }
