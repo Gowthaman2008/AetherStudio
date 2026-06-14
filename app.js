@@ -192,6 +192,25 @@ function initContactForm() {
 
   if (!form || !status) return;
 
+  // Modal elements
+  const successModal = document.getElementById('successModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const modalActionBtn = document.getElementById('modalActionBtn');
+  
+  const closeModal = () => {
+    if (successModal) {
+      successModal.classList.remove('active');
+    }
+  };
+
+  if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+  if (modalActionBtn) modalActionBtn.addEventListener('click', closeModal);
+  if (successModal) {
+    successModal.addEventListener('click', (e) => {
+      if (e.target === successModal) closeModal();
+    });
+  }
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -206,13 +225,19 @@ function initContactForm() {
       // Form values retrieval
       const name = document.getElementById('form-name').value;
       const email = document.getElementById('form-email').value;
+      const phone = document.getElementById('form-phone').value;
 
-      if (name && email) {
+      if (name && email && phone) {
         status.textContent = 'Inquiry successfully transmitted. We will contact you soon.';
         status.className = 'form-status success';
         
         // Reset fields
         form.reset();
+
+        // Show premium success modal
+        if (successModal) {
+          successModal.classList.add('active');
+        }
       } else {
         status.textContent = 'Please fill out all required fields correctly.';
         status.className = 'form-status error';
