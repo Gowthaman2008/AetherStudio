@@ -897,6 +897,9 @@ section.visible {
   font-weight: 500;
   color: var(--text-primary);
   transition: var(--transition-fast);
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .contact-info-item:hover .contact-info-label {
@@ -1031,57 +1034,76 @@ textarea.form-input {
 }
 
 .btn-submit {
-  background: transparent;
-  border: none;
+  background: var(--accent-glow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   outline: none;
   color: var(--text-primary);
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
-  display: flex;
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: inline-flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.5rem 0;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1.1rem 2.8rem;
+  border-radius: 50px;
   position: relative;
-  overflow: visible;
-  transition: var(--transition-fast);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  box-shadow: 0 5px 20px rgba(0, 242, 254, 0.2), 0 5px 15px rgba(155, 81, 224, 0.15);
+  letter-spacing: 0.03em;
+}
+
+.btn-submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-submit-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.02);
+  width: 22px;
+  height: 22px;
   transition: var(--transition-smooth);
 }
 
 .btn-submit-arrow svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   fill: none;
   stroke: var(--text-primary);
-  stroke-width: 2;
+  stroke-width: 2.5;
   transition: var(--transition-smooth);
 }
 
 .btn-submit:hover {
-  color: var(--accent-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 242, 254, 0.45), 0 8px 25px rgba(155, 81, 224, 0.35);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-submit:hover::before {
+  left: 100%;
 }
 
 .btn-submit:hover .btn-submit-arrow {
-  border-color: var(--accent-cyan);
-  background: rgba(0, 242, 254, 0.05);
-  transform: translateX(6px);
-  box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+  transform: translateX(5px);
 }
 
 .btn-submit:hover .btn-submit-arrow svg {
-  stroke: var(--accent-cyan);
-  transform: translateX(2px);
+  stroke: var(--text-primary);
 }
 
 .about-role {
@@ -1113,6 +1135,45 @@ textarea.form-input {
   opacity: 1;
   transform: translateY(0);
   color: #ff3366;
+}
+
+.form-footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.form-disclaimer {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+
+.form-trust-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1.5rem;
+  width: 100%;
+}
+
+.trust-shield-icon {
+  width: 14px;
+  height: 14px;
+  stroke: var(--accent-cyan);
+  stroke-width: 2;
+  opacity: 0.8;
 }
 
 /* Success Modal - Premium Portrait Layout */
