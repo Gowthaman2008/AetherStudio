@@ -32,6 +32,11 @@
   cursor: default;
 }
 
+a, button, [role="button"], select, input[type="submit"], input[type="button"], .filter-btn, .nav-link, .logo, .btn {
+  cursor: pointer;
+}
+
+
 html {
   scroll-behavior: smooth;
   background-color: var(--bg-primary);
