@@ -344,9 +344,10 @@ function initWorkFilters() {
       const filterValue = btn.getAttribute('data-filter');
       
       workItems.forEach(item => {
-        const category = item.getAttribute('data-category');
+        const categoryAttr = item.getAttribute('data-category') || '';
+        const categories = categoryAttr.split(' ');
         
-        if (filterValue === 'all' || category === filterValue) {
+        if (filterValue === 'all' || categories.includes(filterValue)) {
           item.classList.remove('hidden');
           setTimeout(() => {
             item.style.opacity = '1';
