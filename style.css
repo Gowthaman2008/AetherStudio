@@ -802,6 +802,74 @@ section.visible {
   transform: translateX(0);
 }
 
+/* Browser Mockup inside Portfolio Card */
+.browser-mockup {
+  width: 92%;
+  height: 85%;
+  background: #101018;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1;
+  transition: var(--transition-smooth);
+  transform: translateY(-12px); /* shift up to avoid being covered by work-info */
+}
+
+.work-item:hover .browser-mockup {
+  transform: translateY(-22px) scale(1.02);
+}
+
+.browser-header {
+  height: 24px;
+  background: #181824;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.browser-dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.browser-dots .dot.red { background: #ff5f56; }
+.browser-dots .dot.yellow { background: #ffbd2e; }
+.browser-dots .dot.green { background: #27c93f; }
+
+.browser-address {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2px 20px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.browser-content {
+  flex: 1;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-color: #050508;
+}
+
 /* About Section */
 .about-split {
   display: grid;
@@ -1778,6 +1846,12 @@ footer {
     font-size: 0.85rem;
     line-height: 1.45;
     margin-bottom: 0.8rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
   }
 }
 
